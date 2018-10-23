@@ -193,7 +193,7 @@ function getManualTizenConfData(platformsData){
         for (i=0; i < platformsData.length; i++) {
             if (platformsData[i].$.name === 'sectv-tizen') {
                 delete platformsData[i].$;
-                manualTizenConfData = utils.trim(js2xmlparser('platform',platformsData[i],{declaration : {include : false},attributeString : '$'}).replace(/<(\/?platform)>/igm,''));
+                manualTizenConfData = utils.trim(js2xmlparser.parse('platform',platformsData[i],{declaration : {include : false},attributeString : '$'}).replace(/<(\/?platform)>/igm,''));
             }
         }
     }
